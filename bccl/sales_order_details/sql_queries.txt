@@ -1,0 +1,17 @@
+CREATE TABLE bccl_sales_order_details (
+    ID int not null AUTO_INCREMENT, 
+    colliery_name VARCHAR(100),
+    colliery_id VARCHAR(100),
+    area_name VARCHAR(100),
+    area_id VARCHAR(100),
+    `Scheme(FSA/Auction etc)` VARCHAR(200),
+    `Grade&Size(Product Description)` VARCHAR(200),
+    `Consignee ID` VARCHAR(200),
+    `Consignee Name` VARCHAR(200),
+    `Sales Order No.` VARCHAR(200),
+    `Sales Order Date` VARCHAR(200),
+    `Sales Order Expiry Date` VARCHAR(200),
+    `Sales Order Quantity` VARCHAR(200),
+
+    PRIMARY KEY(ID)
+);

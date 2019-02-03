@@ -1,0 +1,1829 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+
+</title>
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-61107284-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no" />
+        <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.png" />
+        <link href="Bootstrap-3.2/css/bootstrap.min_1.1.css" rel="stylesheet" />
+        <link href="Bootstrap-3.2/css/Override_1.11.css" rel="stylesheet" />
+        <link href="Bootstrap-3.2/css/Telrik.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+        <style type="text/css">
+        #stop-resume {
+            display: block;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin: 10px;
+            width: 70px;
+            text-align: center;
+            border: solid 1px white;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+
+            #stop-resume:active {
+                background-color: white;
+                border: solid 1px #f1f1f1;
+                color: blue;
+            }
+
+        .TickerNews {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .ti_wrapper {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ti_slide {
+            width: 30000px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .ti_content {
+            width: 80000px;
+            position: relative;
+            float: left;
+        }
+
+        .ti_news {
+            float: left;
+            font-size: 15px;
+            /*margin-top: 8px;*/
+        }
+
+            .ti_news a {
+                display: block;
+                margin-right: 10px;
+                color: #333 !important;
+                text-decoration: none;
+                font-size: 13px;
+            }
+
+        .ddlewaybill {
+            background-color: #293b4a;
+            border: none;
+            color: #fff;
+            /*font-weight: bold;*/
+            text-align: center !important;
+            margin-top: 5px;
+        }
+
+        .bca a:hover {
+            text-decoration: underline;
+            color: #21ce9a !important;
+            font-weight: bold;
+        }
+
+        /*.dropdown:hover .dropdown-menu {
+            display: block !important;
+}*/
+    </style>
+        <style type="text/css">
+        .btncss
+        {
+            border: none;
+            padding: 6px;
+            background: #2ee03b;
+            font-weight: bold;
+        }
+
+        .bggreen
+        {
+            background: green;
+        }
+
+        .job-card_3
+        {
+            background: white;
+            padding: 35px;
+        }
+
+        .iw-subTitle
+        {
+            background: #d1ffdb;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .pinfo
+        {
+            background: whitesmoke;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        .bgred
+        {
+            background: #ffebf3;
+            padding: 5px;
+            border-radius: 5px;
+            float: right;
+        }
+
+        .wlblgrey
+        {
+            color: black;
+        }
+
+        .toncss
+        {
+            float: right;
+            background: #848484;
+            color: white;
+            margin-right: -15px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .rupees
+        {
+            background: #b5efdd;
+            border-radius: 5px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .dn
+        {
+            display: none;
+            /*color:black;*/
+        }
+
+        .colborder
+        {
+            border: 1px solid #dadada;
+        }
+
+        .job-card_3
+        {
+            width: 100%;
+            background: #fff;
+            box-shadow: 1px 1px 1px #d8d8d8;
+            -webkit-box-shadow: 1px 1px 1px 1px #d8d8d8;
+            -moz-box-shadow: 1px 1px 1px 1px #d8d8d8;
+            position: relative;
+            float: left;
+            /*width: 100%;*/
+            padding: 5px !important;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .pd50
+        {
+            padding-left: 35px;
+        }
+
+        .loader
+        {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            margin-top: -38px;
+            width: 15px;
+            margin-left: 10px;
+            height: 15px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin
+        {
+            0%
+            {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100%
+            {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin
+        {
+            0%
+            {
+                transform: rotate(0deg);
+            }
+
+            100%
+            {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fs18
+        {
+            font-size: 18px;
+        }
+
+        .input-group-addon
+        {
+            padding: 6px 12px;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1;
+            color: #888888 !important;
+            text-align: center;
+            background-color: #293b4a;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+        }
+
+        .lblred
+        {
+            color: red;
+        }
+
+        #lblred
+        {
+            color: red;
+        }
+
+        .w50
+        {
+            width: 50px;
+        }
+
+        .lbltonbold
+        {
+            font-weight: bold;
+        }
+    </style>
+    </head>
+    <body onload="javascript:HideProgressBar()">
+        <script type="text/javascript">
+        function ShowProgressBar() {
+            document.getElementById('dvProgressBar').style.visibility = 'visible';
+        }
+
+        function HideProgressBar() {
+            document.getElementById('dvProgressBar').style.visibility = "hidden";
+        }
+    </script>
+        <script type="text/javascript" src='/Bootstrap-3.2/js/jquery.tickerNews.min.js'></script>
+        <script src='/MasterPages/Script/owl.carousel.min.js'></script>
+        <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+        <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+        <!--AIzaSyD3kx4m5pTjAY0-O8lA0XmMizNGuhUhuXA-->
+        <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA8MCfUOOYjDFcTtALoTC7wSd242rnySdE&sensor=false&libraries=places'></script>
+        <script type="text/javascript" src='http://maps.googleapis.com/maps/api/js?key=AIzaSyA8MCfUOOYjDFcTtALoTC7wSd242rnySdE&sensor=false&libraries=places'></script>
+        <script type="text/javascript" src='https://code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+        <script type="text/javascript" src='http://code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+        <script type="text/javascript" src='https://www.google.com/recaptcha/api.js'></script>
+        <script type="text/javascript"></script>
+        <script>
+        $(document).ready(function () {
+            $("#dd1").hover(function () {
+                $("#ddm1").slideToggle(250);
+
+            })
+        });
+    </script>
+        <script>
+        $(document).ready(function () {
+            $("#dd2").hover(function () {
+                $("#ddm2").slideToggle(250);
+
+            })
+        });
+    </script>
+        <script>
+        $(document).ready(function () {
+            $("#dd3").hover(function () {
+                $("#ddm3").slideToggle(250);
+
+            })
+        });
+    </script>
+        <script>
+        $(document).ready(function () {
+            $("#dd4").hover(function () {
+                $("#ddm4").slideToggle(250);
+
+            })
+        });
+    </script>
+        <script type="text/javascript">
+        $(function () {
+
+            createMarquee({
+            });
+
+            //example of overwriting defaults: 
+
+            // createMarquee({
+            // 		duration:30000, 
+            // 		padding:20, 
+            // 		marquee_class:'.example-marquee', 
+            // 		container_class: '.example-container', 
+            // 		sibling_class: '.example-sibling', 
+            // 		hover: false});
+            // });
+        });
+
+    </script>
+        <script type="text/javascript" src='/Script/findroute.js'></script>
+        <script type="text/javascript" src='/Bootstrap-3.2/js/bootstrap.min.js'></script>
+        <script type="text/javascript" src='/Script/Share/js/demo.js'></script>
+        <script type="text/javascript">
+        $(function () {
+            var timer = !1;
+            _Ticker = $("#T1").newsTicker();
+            _Ticker.on("mouseenter", function () {
+                var __self = this;
+                timer = setTimeout(function () {
+                    __self.pauseTicker();
+                }, 200);
+            });
+            _Ticker.on("mouseleave", function () {
+                clearTimeout(timer);
+                if (!timer) return !1;
+                this.startTicker();
+            });
+        });
+    </script>
+        <form method="post" action="./TripCostCalculator" id="form1">
+            <input type="hidden" name="ScriptManager1_HiddenField" id="ScriptManager1_HiddenField" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTkxNDMwODQ1D2QWAmYPZBYCAgEPZBYIAgIPZBYEAgEPDxYCHgdWaXNpYmxlaGRkAgIPDxYCHwBoZGQCAw8QZGQWAWZkAgQPEGRkFgFmZAIKD2QWBgIID2QWAmYPZBYEAgMPEA8WAh4LXyFEYXRhQm91bmRnZBAVCRAtLVNlbGVjdCBCcmFuZC0tA0FNVwxBU0hPS0xFWUxBTkQKQkhBUkFUQkVOWgZFSUNIRVIFRk9SQ0UITUFISU5EUkEHUElBR0dJTwRUQVRBFQkBMANBTVcMQVNIT0tMRVlMQU5ECkJIQVJBVEJFTloGRUlDSEVSBUZPUkNFCE1BSElORFJBB1BJQUdHSU8EVEFUQRQrAwlnZ2dnZ2dnZ2cWAQIIZAIHDxAPFgQeDURhdGFUZXh0RmllbGQFBU1vZGVsHwFnZBAVKBAtLVNlbGVjdCBNb2RlbC0tHTIwNy1SWC1DT01NT04tUkFJTCBbMS4wNFRvbnNdE0FDRS1DTkcgWzAuNjI1VG9uc10TQUNFLUdPTEQgWzAuNzFUb25zXRBBQ0UtSFQgWzAuNlRvbnNdE0FDRS1NRUdBIFsxLjAzVG9uc10WQUNFLVhMLUJTSVYgWzAuNzFUb25zXRFBQ0UtWklQIFswLjZUb25zXRRBQ0UtWklQLVhMIFswLjZUb25zXRRMUFMtNDAxOCBbMzQuMjNUb25zXRRMUFMtNDAxOCBbMzQuMjNUb25zXRRMUFMtNDkyMyBbNDAuNDJUb25zXRNMUFQtMTEwOS1FWCBbOFRvbnNdGExQVC0xMTA5LUhFWDIgWzguMzJUb25zXRFMUFQtMjUxOCBbMTlUb25zXRRMUFQtMjUyMSBbMTguODRUb25zXRRMUFQtMzExOCBbMjMuMTVUb25zXRNMUFQtMzcxOCBbMjcuNFRvbnNdEUxQVC0zNzIzIFsyN1RvbnNdEkxQVC00MDcgWzQuNzVUb25zXRJMUFQtNzA5IFs0LjY5VG9uc10STFBULTgxMCBbNC45OVRvbnNdFlBSSU1BLTQwMjggWzMyLjkyVG9uc10WUFJJTUEtNDkyOCBbMzkuMjhUb25zXRNTRS0xNjEzIFsxMS40OFRvbnNdElNGQy00MDcgWzMuODdUb25zXRVTRkMtNDA3LUhUIFszLjk3VG9uc10aU0ZDLTQwNy1QSUNLLVVQIFsyLjI1VG9uc10iU0ZDLTQwNy1QSUNLVVAtRVgtQlMtSVYgWzIuNDVUb25zXRJTRkMtNzA5IFs0Ljc3VG9uc10SU0ZDLTkwOSBbNi4yOVRvbnNdF1NJR05BLTMxMTguVCBbMjMuM1RvbnNdFlNJR05BLTM1MTggWzI5LjIzVG9uc10WU0lHTkEtNDAxOCBbMzQuMjNUb25zXRhTSUdOQS00OTIzLlMgWzQwLjcyVG9uc10WU1VQRVItQUNFLU1JTlQgWzFUb25zXRRVTFRSQS0xMDEyIFs2LjVUb25zXRJVTFRSQS0xMDE0IFs3VG9uc10RVUxUUkEtOTEyIFs2VG9uc10QWEVOT04gWzEuMDNUb25zXRUoATAdMjA3LVJYLUNPTU1PTi1SQUlMIFsxLjA0VG9uc10TQUNFLUNORyBbMC42MjVUb25zXRNBQ0UtR09MRCBbMC43MVRvbnNdEEFDRS1IVCBbMC42VG9uc10TQUNFLU1FR0EgWzEuMDNUb25zXRZBQ0UtWEwtQlNJViBbMC43MVRvbnNdEUFDRS1aSVAgWzAuNlRvbnNdFEFDRS1aSVAtWEwgWzAuNlRvbnNdFExQUy00MDE4IFszNC4yM1RvbnNdFExQUy00MDE4IFszNC4yM1RvbnNdFExQUy00OTIzIFs0MC40MlRvbnNdE0xQVC0xMTA5LUVYIFs4VG9uc10YTFBULTExMDktSEVYMiBbOC4zMlRvbnNdEUxQVC0yNTE4IFsxOVRvbnNdFExQVC0yNTIxIFsxOC44NFRvbnNdFExQVC0zMTE4IFsyMy4xNVRvbnNdE0xQVC0zNzE4IFsyNy40VG9uc10RTFBULTM3MjMgWzI3VG9uc10STFBULTQwNyBbNC43NVRvbnNdEkxQVC03MDkgWzQuNjlUb25zXRJMUFQtODEwIFs0Ljk5VG9uc10WUFJJTUEtNDAyOCBbMzIuOTJUb25zXRZQUklNQS00OTI4IFszOS4yOFRvbnNdE1NFLTE2MTMgWzExLjQ4VG9uc10SU0ZDLTQwNyBbMy44N1RvbnNdFVNGQy00MDctSFQgWzMuOTdUb25zXRpTRkMtNDA3LVBJQ0stVVAgWzIuMjVUb25zXSJTRkMtNDA3LVBJQ0tVUC1FWC1CUy1JViBbMi40NVRvbnNdElNGQy03MDkgWzQuNzdUb25zXRJTRkMtOTA5IFs2LjI5VG9uc10XU0lHTkEtMzExOC5UIFsyMy4zVG9uc10WU0lHTkEtMzUxOCBbMjkuMjNUb25zXRZTSUdOQS00MDE4IFszNC4yM1RvbnNdGFNJR05BLTQ5MjMuUyBbNDAuNzJUb25zXRZTVVBFUi1BQ0UtTUlOVCBbMVRvbnNdFFVMVFJBLTEwMTIgWzYuNVRvbnNdElVMVFJBLTEwMTQgWzdUb25zXRFVTFRSQS05MTIgWzZUb25zXRBYRU5PTiBbMS4wM1RvbnNdFCsDKGdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAQILZAIODxYCHwBnFgYCAQ8PFgIeBFRleHQFCuKCuSAxMiwwODBkZAIDDw8WAh8DBQnigrkgOCwyMDNkZAIFDw8WBh8DBQnigrkgMyw4NzceCUZvcmVDb2xvcgpPHgRfIVNCAgRkZAIQD2QWAmYPZBYiAgEPDxYCHwMFDERlbGhpLCBJbmRpYWRkAgMPDxYCHwMFGURoYW5iYWQsIEpoYXJraGFuZCwgSW5kaWFkZAIFDw8WAh8DBRJUQVRBICggTFBTLTQ5MjMgIClkZAIGDw8WAh8DBQo0MC40MlRvbnNdZGQCCg8PFgIfAwULU2luZ2xlIFRyaXBkZAIMD2QWAmYPZBYCAgEPDxYCHghJbWFnZVVybAUbQWxsVHJ1Y2tzL1RBVEFfTFBTLTQ5MjMuanBnZGQCDg9kFgJmD2QWAgIBDw8WAh8DBQgxLDIyNyBrbWRkAhAPDxYCHwMFCDQuMSBEYXlzZGQCEg8PFgIfA2VkZAIUDw8WAh8DBQg1LjEgRGF5c2RkAhYPDxYCHwMFBzc3IEx0cnNkZAIYDw8WAh8DBQnigrkgMiw0MDBkZAIaDw8WAh8DBQnigrkgNSw4MDNkZAIcDw8WAh8AaGQWAgIBDw8WAh8DBQTigrkgZGQCHg8PFgIfAwUJ4oK5IDgsMjAzZGQCIA8PFgIfAwUK4oK5IDEyLDA4MGRkAiIPDxYGHwMFCeKCuSAzLDg3Nx8ECk8fBQIEZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFggFJ2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRic2luZ2xldHJpcAUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJzaW5nbGV0cmlwBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYnJldHVybnRyaXAFJ2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRicmV0dXJudHJpcAUkY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJ3aXRoZW1pBSRjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJHJkYndpdGhlbWkFJ2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkcmRid2l0aG91dGVtaQUnY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRyZGJ3aXRob3V0ZW1pTtaddPJShI5zeyKmDQpKgByxIa0=" />
+            <script src="/ScriptResource.axd?d=wBInhQMfxqrrO8o9zJuMymrwSaauR91cmiJ-vZgE55NwKmNoSOWxKxh6abSzNsDGDqFzL45qpTNc2kHafoP-Uaa0NuVZ2ubKA0fkUh9fq086juBmnDp_JYJ4wIfk5aL_epuiwg2&amp;t=ffffffffdc32f924" type="text/javascript"></script>
+            <script type="text/javascript">
+//
+                <![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+
+            </script>
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="30D924ED" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAE73h2u2aGkpkFH60jzvnK5YEs5U24Uu0Sqezf8upF7U6cq6UVmmub+wX2e5toQDmtRYREGQS6unBdfCftfbHtAOsD10Tvd9lv+N6Rnj5gUz5wxiJ1OXB5F7H0HedIpr9WmSL0bcdplvGtISxuifCodcmRroIA3kLeiFyp5gGYC94uMcGKh4E0zwzOW/2jRID0F4KaoXnNq38knH0oMsQWFadTX2/pVPaghcr8GI/eCPd/QXCI4U41a3FNl4l0hT4LuGIV5lOB5VKvFXiEjuq71sToTYmzJUHbNAT2V0Xjp8lns7Gx45K3DbQAe4pMU5U0s6vpiJYanVfjgYz4Khby7iB5XzOIX66gsiF/64pjna9pxQ6KvAQMFOPhQD/i9U7CVjWX2RnrWh/EAdLDReuOmSHeEwOukQP9HjJm1VgfwqlnB7wnXYpN5l4VemBWPoMWQF1gh1qeF5PY6WV4jyEalaaVjOkE0Engvicz5SxlRvmBrOpfZ+d5n0SdS01K9UfCaiWqGL0oOrMZeYOn2Uf3fP3VbGWsW6gdu7ppMxB8x+hk8tL7N4GwN137YE5wEvOZPfYvegI7+1pF6km0e23Y2C5vq0d0bov8/e+Yg4WTspfrPWFqEkAkuezTQv65zcIaKJM4WDt3C/MTR1NBCVG64TPkAmOlkEadwkqA7Hzgbkn2E7v/GBOyKmQgvsByFKftsWfHALjjROEJDFnrSXaQ85CvqQfxZQT69mw2btPcp6cW82AkTeaA1d7J7YUny1xttJMXFD5x28qBGAWTGdkyK5gA11pLRb7ONm0uHG9e9RLJxbo20qIzVpZaUCVhfpSobQBx43L9NGLwizWMCFUBbSeSvAuWWTwTXw39XE8DS6bJrXM/z/kKTLlvrpFt8h1RcVBlASw7DdSvuclj1Sy1oQpOTq762HQSMVMbYqTp5hx4wofmguLUGK3yeKJKCyTWCWBiquRjtatbC0Empml5sfjEQYTlVBAoGWMAhtlYcsPpHDTvk3sp8Zyv7HeO2IHC5DWXDINr4eTkkBMPWxPU8hU0462SC+mFXFUJGbeJMNY37y2SxQXXs/o9YegYjpcJR3qQUQJVcpIBAscj2NwtaTOX8usC04Vo6P+mYOcDqoK258oskd4BFrkTMA8H8gPLxUMqHTITsu54+cPJe+nirGbLYaePuoVlUhdnr1me2TovYTJ08SlPvZwpBLZlOvRSx7SffB/vWYhN9Ux7xfdYFGMHzb3yMTOIcaQ3pgqgR5meaByyoOLIFFhbK7/+4l8qKG3V+EF2/xevkjRwMYO4NbhZnumNVNe/Inq0v/x0dJtyS6gUqmH9K96d1NBRhlgH3WVczOyyIuBHojPFCMqfzSLKtePvzPWWIPljS5zbbddOIN1QEtiwm4Ei8ONsFGr8YtzEwS1InZrCbehe0YvifLQMRmhO27j7wYC8l1FSB8Mlb4BytVWOalZcbyb1YIvL8nll2iFc+7WX8opr1C2ZNLz701LCGqboKD1lsh16wytNIg6WJEG+NknXCiXSuTSsCCt/aa/XG27OEbupLBryjMbrdjA9rEqDRwd0I3W4Ez//ww2HihsJNRkZpiIMdi6HySZOg4tVkO0uxklB9XLbeYiQePsqwZBn0oj+rRyBHv14gW2Oz6MPYY2xlSYUEFb35HgWhSIK5yP9xOD3dmU4WjkylMUw==" />
+            <div class="container-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="TopHeader">
+                            <div class="col-md-6">
+                                <div class="breadcrumb pull-left bca">
+                                    <h4>
+                                        <a href='/FindTruckDriver'>Find Truck Driver</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                        <a href='/FindTruckDriverJob'>Truck Driver Jobs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                        <a href="TruckEMICalculator">Truck EMI Calculator</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                        <a href="TollCalculator">Toll Calculator&nbsp;
+                                            <img src="Images/new_gif_2.gif" width="50px" />
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div id="login" class="breadcrumb pull-right hidden-xs bca">
+                                    <p>
+                                        <span>
+                                            <span class="fas fa-sign-in-alt blue"></span>
+                                            <a href='/Login'>Login</a>&nbsp;&nbsp;&nbsp;|
+                                        </span>&nbsp;&nbsp;&nbsp;
+                                        <span id="register" class="fa fa-user fa-fw blue"></span>
+                                        <a href='/Register'>Register</a>
+                                    </p>
+                                </div>
+                                <div id="uservisible" class="breadcrumb pull-right">
+                                    <p>
+                                    &nbsp;&nbsp;
+                                </p>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <p>
+                                    <select name="ctl00$ddlewaybill" id="ddlewaybill" class="ddlewaybill pull-right">
+                                        <option selected="selected" value="Select">eWay Bill</option>
+                                        <option value="EWBGen">Generate</option>
+                                        <option value="About">About</option>
+                                        <option value="FAQ">FAQ&#39;s</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="col-md-1">
+                                <p>
+                                    <select name="ctl00$ddlLanguages" id="ddlLanguages" class="ddlform-control pull-right">
+                                        <option selected="selected" value="en-us">English</option>
+                                        <option value="hi">हिंदी</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="col-md-2" style="padding: 0">
+                                <p>
+                                    <img src='/Images/wab.png' class="pull-right" height="25px" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-full bgwhsm">
+                <div class="container bgwhsm">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="logo">
+                                <a href='/Home'>
+                                    <img src='/Images/logo1.png' alt="TruckBhada" class="img-responsive" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <marquee behaviour="alternate" onmouseover="this.stop();" onmouseleave="this.start();">
+                                <a href="Jobs">
+                                    <img src="Images/Job_Hiring.png" height="63px" />
+                                </a>
+                            </marquee>
+                        </div>
+                        <div class="col-md-2 pull-right hidden-xs hidden-sm">
+                            <div class="gap">
+                        </div>
+                            <img src='/Images/tollfree.png' alt="Toll Free Image" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-full purple">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="MenuSection">
+                                <nav class="navbar navbar-default">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand visible-xs" href="#">Menu</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav">
+                                            <li class="active">
+                                                <a href='/Home' class="hidden-xs">
+                                                    <span class="fa fa-home fa-fw" style="color: white !important;"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href='/Home' class="visible-xs">Home</a>
+                                            </li>
+                                            <li>
+                                                <a class="visible-xs" href='/Login'>Login</a>
+                                            </li>
+                                            <li>
+                                                <a class="visible-xs" href='/Register'>Register</a>
+                                            </li>
+                                            <li>
+                                                <a id="lnkPostTruck" href="javascript:__doPostBack(&#39;ctl00$lnkPostTruck&#39;,&#39;&#39;)">Post Truck Location</a>
+                                            </li>
+                                            <li>
+                                                <a id="lnkFindLoad" href="javascript:__doPostBack(&#39;ctl00$lnkFindLoad&#39;,&#39;&#39;)">Find Load</a>
+                                            </li>
+                                            <li>
+                                                <a id="lnkPostLoad" href="javascript:__doPostBack(&#39;ctl00$lnkPostLoad&#39;,&#39;&#39;)">Post Load</a>
+                                            </li>
+                                            <li>
+                                                <a id="lnkFindTruck" href="javascript:__doPostBack(&#39;ctl00$lnkFindTruck&#39;,&#39;&#39;)">Find Truck</a>
+                                            </li>
+                                            <li>
+                                                <a class="bntblue" href='/CalculateFreight'>Calculate Freight</a>
+                                            </li>
+                                            <li>
+                                                <a class="bntblue" href="/Package">Subscription Package</a>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown" id="dd1">
+                                                    <button id="Button1" type="button" aria-haspopup="true" class="btnblue" aria-expanded="false">
+                                                    Buy & Sell
+                                                    
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu" id="ddm1">
+                                                        <li>
+                                                            <a class="bntblue" href='/BuyTruck'>Buy Truck</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href='/SellTrucks'>Sell Truck</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown" id="dd2">
+                                                    <button id="lbldriver" type="button" aria-haspopup="true" class="btnblue" aria-expanded="false">
+                                                    Truck Driver
+                                                    
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu" id="ddm2">
+                                                        <li>
+                                                            <a class="bntblue" href='/TruckDriverRegistration'>Truck Driver Registration</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="bntblue" href='/FindTruckDriver'>Find Truck Driver</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown" id="dd3">
+                                                    <button id="lblvat" type="button" aria-haspopup="true" class="btnblue" aria-expanded="false">
+                                                    RTO Forms
+                                                    
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu" id="ddm3">
+                                                        <li>
+                                                            <a class="bntblue" href='/RTOForms'>RTO Forms</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown" id="dd4">
+                                                    <button id="lblhelp" type="button" aria-haspopup="true" class="btnblue" aria-expanded="false">
+                                                    More Services
+                                                    
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu" id="ddm4">
+                                                        <li>
+                                                            <a id="lnkPostJob" href="javascript:__doPostBack(&#39;ctl00$lnkPostJob&#39;,&#39;&#39;)">Post Driver Vacancy</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="bntblue" href='/FindTruckDriverJob'>Find Driver Jobs</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="bntblue" href="/TransporterProfile">Web Profile Package</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="bntblue" href='/TransporterDirectory'>Transporter Directory</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href='/TransitInsurance'>Transit Insurance</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="bntblue" href='/FAQ'>How It Works ?</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="Page-Heading">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Trip Cost Calculator</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8MCfUOOYjDFcTtALoTC7wSd242rnySdE&libraries=places,geometry" type="text/javascript"></script>
+                    <script src="Script/RouteBoxer.js"></script>
+                    <script src="Script/findroute.js"></script>
+                    <script src="Script/Bindcity.js"></script>
+                    <script type="text/javascript">
+            //  window.onpaint = Toll();
+             </script>
+                    <script type="text/javascript">
+            var options = {
+                types: ['(cities)'],
+                componentRestrictions: { country: "IND" }
+            };
+            google.maps.event.addDomListener(window, 'load', function () {
+                var places = new google.maps.places.Autocomplete(document.getElementById('txtsource'), options);
+                google.maps.event.addListener(places, 'place_changed', function () {
+                    var place = places.getPlace();
+                });
+            });
+        </script>
+                    <script type="text/javascript">
+            var options = {
+                types: ['(cities)'],
+                componentRestrictions: { country: "IND" }
+            };
+            google.maps.event.addDomListener(window, 'load', function () {
+                var places = new google.maps.places.Autocomplete(document.getElementById('txtdest'), options);
+                google.maps.event.addListener(places, 'place_changed', function () {
+                    var place = places.getPlace();
+                });
+            });
+        </script>
+                    <script type="text/javascript">
+                function isNumber(evt) {
+                    evt = (evt) ? evt : window.event;
+                    var charCode = (evt.which) ? evt.which : evt.keyCode;
+                    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                        //document.getElementById("label1").innerHTML = "Enter only numbers";
+                        return false;
+                    }
+                }
+    
+                    </script>
+                    <input style="color: white" type="hidden" name="hddis" id="hddis" />
+                    <input style="color: white" type="hidden" name="hdv" id="hdv" />
+                    <input style="color: white" type="hidden" name="latlong" id="latlong" />
+                    <div id="fullscreen-map" class="fullscreen-map">
+        </div>
+                    <script type="text/javascript">
+                   function TollDropdown() {
+                       var at;
+                       var lg;
+                       var lg2;
+                       // $(document).ready(function () {
+                       document.getElementById("ContentPlaceHolder1_TextBox1").value = "";
+                       document.getElementById('ContentPlaceHolder1_hdfs').value = "";
+                       document.getElementById('latlong').value = "";
+
+                       var directionsDisplay;
+                       var directionsService = new google.maps.DirectionsService();
+                       var map = null;
+                       var boxpolys = null;
+                       var routeBoxer = null;
+                       var distance = null; // km
+                       var gmarkers = [];
+                       var carray2 = [];
+                       var modelc = [];
+                       var carfrst;
+                       var TollArrayTB = null;
+                       var infowindow = new google.maps.InfoWindow();
+
+                       var truckt = '';
+                       //var trucktype = "Car_Jeep_Van";
+
+                       var mdl = document.getElementById('ContentPlaceHolder1_ddlmodel').value;
+                       modelc = mdl.split('[');
+                       var fmodelc = modelc[0];
+                       var fuelt = document.getElementById('ContentPlaceHolder1_ddlfueltype').value;
+                       if (document.getElementById('ContentPlaceHolder1_rdbsingletrip').checked)
+                       {
+                           tript = "Single_Trip";
+                       }
+                       else
+                       {
+                           tript = "Return_Trip";
+                       }
+
+
+                       var xhReq2 = new XMLHttpRequest();
+                       //  xhReq2.open("GET", "http://localhost:50428/PR_TruckBhada%2012-11-2018/WS/rdXD4l0kD8.asmx/SelectModelCategory?model=" + fmodelc, false);
+                       xhReq2.open("GET", "https://truckbhada.com/WS/rdXD4l0kD8.asmx/SelectModelCategory?model=" + fmodelc, false);
+                       xhReq2.send(null);
+                       var ModelCategory = JSON.parse(xhReq2.responseText);
+                       var trucktype = ModelCategory[0].Category;
+
+
+                       var xhReq = new XMLHttpRequest();
+                       xhReq.open("GET", "https://truckbhada.com/WS/rdXD4l0kD8.asmx/SelectAllTollLatLng", false);
+                       xhReq.send(null);
+                       var TollArrayTB = JSON.parse(xhReq.responseText);
+                       initialize();
+                       function initialize() {
+
+                           //document.getElementById("latlong").value = "";
+
+                           directionsDisplay = new google.maps.DirectionsRenderer();
+                           var chicago = new google.maps.LatLng(23.2245772, 77.1908861);
+                           var mapOptions = {
+                               zoom: 7,
+                               center: chicago,
+                           }
+
+                           map = new google.maps.Map(document.getElementById('Div2'), mapOptions);
+                           directionsDisplay.setMap(map);
+                           //directionsDisplay.setPanel(document.getElementById('dvPanel'));
+                           routeBoxer = new RouteBoxer();
+                           var marker, i;
+
+                           for (i = 0; i < TollArrayTB.length; i++) {
+                               var lat1 = TollArrayTB[i].LATITUDE;
+                               var long1 = TollArrayTB[i].LONGITUDE;
+
+                               var point = new google.maps.LatLng(TollArrayTB[i].LATITUDE, TollArrayTB[i].LONGITUDE);
+
+                               switch (trucktype) {
+                                   case "Car_Jeep_Van":
+                                       var carray = TollArrayTB[i].CAR_JEEP_VAN.split('/');
+                                       carray2 = TollArrayTB[i].CAR_JEEP_VAN.split('/');
+                                       var carfrst = +carray2[0];
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">CAR/JEEP/VAN :' + '
+                                <span class="bgred">Rs ' + carray[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       //   var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+                                   case "LCV":
+                                       var clcv = TollArrayTB[i].LCV.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">LCV : ' + '
+                                <span class="bgred">Rs ' + clcv[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       //  var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+
+                                   case "Bus_Truck":
+                                       var cbtruck = TollArrayTB[i].BUS_TRUCK.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">BUS/TRUCK : ' + '
+                                <span class="bgred">Rs ' + cbtruck[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       // var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+
+                                   case "Upto_3_Axle_Vehicle":
+                                       var cu3aw = TollArrayTB[i].UPTO_3_AXLE_VEHICLE.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">Upto 3 Axle Vehicle : ' + '
+                                <span class="bgred">Rs ' + cu3aw[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       //  var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+
+                                   case "Upto_4_to_6_Axle_Vehicle":
+                                       var c4t6a = TollArrayTB[i].UPTO_4_TO_6_AXLE.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">4 to 6 Axle : ' + '
+                                <span class="bgred">Rs ' + c4t6a[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       // var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+
+                                   case "HCM_EME":
+                                       var chcm = TollArrayTB[i].HCM_EME.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">HCM/EME : ' + '
+                                <span class="bgred">Rs ' + chcm[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       //  var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+
+                                   case "Upto_7_or_More_Axle":
+                                       var cu7a = TollArrayTB[i].UPTO_7_or_MORE_AXLE.split('/');
+                                       var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">7 or more Axle : ' + '
+                                <span class="bgred">Rs ' + cu7a[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                       var icon_img = "Images/toll-road.png";
+                                       var marker = createMarker(point, html, Popuphtml, icon_img);
+                                       // var car = +clcv[0];
+                                       gmarkers.push(marker);
+                                       break;
+                               }
+                           }
+
+                           calcRoute();
+                       }
+                       function createMarker(point, html, Popuphtml, icon_img) {
+
+
+
+                           var infowindow = new google.maps.InfoWindow();
+                           var marker;
+                           marker = new google.maps.Marker({
+                               position: point,
+                               //map: map,
+                               icon: icon_img
+                               //,optimized:false
+                           });
+                           google.maps.event.addDomListener(marker, "click", function () {
+                               infowindow.setContent(html);
+                               infowindow.open(map, marker);
+                               marker.setIcon(myIcon_google);
+                           });
+                           google.maps.event.addDomListener(marker, 'click', function () { markerClick(this, Popuphtml); });
+
+                           google.maps.event.addDomListener(marker, 'click', function () { infowindow.close(); });
+                           return marker;
+
+                       }
+                       function calcRoute() {
+
+                           // Clear any previous route boxes from the map
+                           clearBoxes();
+
+                           // Convert the distance to box around the route from miles to km
+                           distance = /* parseFloat(document.getElementById("distance").value) */.490 * 1.609344;
+
+                           //var start = document.getElementById('txtSourceRoute').value;
+                           //var end = document.getElementById('txtDestinationRoute').value;
+
+                           var start = document.getElementById("txtsource").value;
+                           var end = document.getElementById("txtdest").value;
+                           var tgpts = [];
+                           var request = {
+                               origin: start,
+                               destination: end,
+                               waypoints: tgpts,
+                               travelMode: google.maps.TravelMode.DRIVING,
+                               unitSystem: google.maps.DirectionsUnitSystem.METRIC
+                           };
+                           directionsService.route(request, function (response, status) {
+                               if (status == google.maps.DirectionsStatus.OK) {
+                                   directionsDisplay.setDirections(response);
+
+                                   distance1 = response.routes[0].legs[0].distance.text;
+                                   document.getElementById("ContentPlaceHolder1_txtdist").value = distance1;
+                          
+   
+
+
+                                   
+                                   // Box around the overview path of the first route
+                                   var path = response.routes[0].overview_path;
+                                   var boxes = routeBoxer.box(path, distance);
+                                   // alert(boxes.length);
+                                   drawBoxes(boxes);
+                                   // findPlaces(boxes,0);
+                                   // HideWait();
+                                   //   document.getElementById("BtnLoad").click();
+                               };
+                           });
+                       }
+                       // Draw the array of boxes as polylines on the map
+
+                       function drawBoxes(boxes) {
+                           boxpolys = new Array(boxes.length);
+                           for (var i = 0; i< boxes.length; i++) {
+                               boxpolys[i] = new google.maps.Rectangle({
+                                   bounds: boxes[i],
+                                   fillOpacity: 0,
+                                   strokeOpacity: 1.0,
+                                   strokeColor: '#000000',
+                                   strokeWeight: 0,
+                                   map: map
+                               });
+
+
+                               for (var j = 0; j < gmarkers.length; j++) {
+                                   if (boxes[i].contains(gmarkers[j].getPosition())) {
+                                       gmarkers[j].setMap(map);
+
+                                       document.getElementById("latlong").value += gmarkers[j].getPosition() + "|";
+                                       document.getElementById("ContentPlaceHolder1_TextBox1").value += gmarkers[j].getPosition() + "|";
+                                       document.getElementById('ContentPlaceHolder1_hdfs').value += gmarkers[j].getPosition() + "|";
+                                       a = document.getElementById("ContentPlaceHolder1_TextBox1").value;
+                                   }
+                                   //  window.location = 'http://localhost:63974/PR_TruckBhada%2025-10-2018/Trip-Calculator?lat=' + lg2 + '&vtype=' + trucktype + '&Source=' + s + '&Dest=' + d + '&JT=' + tript + '&Mil=' + mileage + '&FT=' + fuelt + '&Dist=' + distance1;;
+                                   // window.location = 'http://truckbhada.com/TollCal?lat=' + lg2 + '&vtype=' + trucktype + '&Source=' + s + '&Dest=' + d;
+
+
+                               }
+
+                           }
+                       }
+
+                       function clearBoxes() {
+                           if (boxpolys != null) {
+                               for (var i = 0; i < boxpolys.length; i++) {
+                                   boxpolys[i].setMap(null);
+                               }
+                           }
+                           boxpolys = null;
+                       }
+
+
+
+                   }
+                   //setTimeout(function () {
+                   //    //  window.location.href = 'http://localhost:60193/PR_TruckBhada%2028-09-2018/TollCalculator.aspx?lat=' + a + ' & vtype=' + trucktype;
+                   //    //window.location.href = 'http://localhost:60193/PR_TruckBhada%2028-09-2018/TollCalculator.aspx?lat=' + lg + '&vtype=' + trucktype + '&Source=' + s + '&Dest=' + d;
+                   //    //window.location.href = 'http://localhost:60193/PR_TruckBhada%2028-09-2018/TollCalculator.aspx?lat=' + lg2 + '&vtype=' + trucktype + '&Source=' + s + '&Dest=' + d;
+                   //}, 100)
+
+        
+                    </script>
+                    <script type="text/javascript">
+                    window.onload = function Toll() {
+
+                        document.getElementById("txtsource").value = "";
+                        document.getElementById("txtdest").value = "";
+               
+                        document.getElementById("ContentPlaceHolder1_ddlbrand").selectedIndex = 0;
+
+                        document.getElementById("ContentPlaceHolder1_ddlmodel").selectedIndex = 0;
+                        // $(document).ready(function () {
+                        document.getElementById("ContentPlaceHolder1_TextBox1").value = "";
+                        var t = 0;
+
+                        var s = '';
+                        var d = '';
+                        var trucktype = '';
+                        //var trucktype = document.getElementById('ContentPlaceHolder1_lblvhtype').value = trucktype;
+                        //  $('[id*=hdfs]').val(s);
+                        //   $('[id*=hdfd]').val(d);
+     
+
+
+                        var directionsDisplay;
+                        var directionsService = new google.maps.DirectionsService();
+                        var map = null;
+                        var boxpolys = null;
+                        var routeBoxer = null;
+                        var distance = null; // km
+                        var gmarkers = [];
+                        var carray2 = [];
+                        var carfrst;
+                        var TollArrayTB = null;
+                        var infowindow = new google.maps.InfoWindow();
+                        var xhReq = new XMLHttpRequest();
+                        xhReq.open("GET", "https://truckbhada.com/WS/rdXD4l0kD8.asmx/SelectAllTollLatLng", false);
+                        //xhReq.open("GET", "https://truckbhada.com/WS/rdXD4l0kD8.asmx/FindLoad", false);
+                        xhReq.send(null);
+                        var TollArrayTB = JSON.parse(xhReq.responseText);
+                        initialize();
+                        function initialize() {
+
+                            //document.getElementById("latlong").value = "";
+
+                            directionsDisplay = new google.maps.DirectionsRenderer();
+                            var chicago = new google.maps.LatLng(23.2245772, 77.1908861);
+                            var mapOptions = {
+                                zoom: 7,
+                                center: chicago,
+                            }
+
+                            map = new google.maps.Map(document.getElementById('dvMap'), mapOptions);
+                            directionsDisplay.setMap(map);
+                            //directionsDisplay.setPanel(document.getElementById('dvPanel'));
+                            routeBoxer = new RouteBoxer();
+                            var marker, i;
+
+                            for (i = 0; i < TollArrayTB.length; i++) {
+                                var lat1 = TollArrayTB[i].LATITUDE;
+                                var long1 = TollArrayTB[i].LONGITUDE;
+
+                                var point = new google.maps.LatLng(TollArrayTB[i].LATITUDE, TollArrayTB[i].LONGITUDE);
+
+                                switch (trucktype) {
+                                    case "Car_Jeep_Van":
+                                        var carray = TollArrayTB[i].CAR_JEEP_VAN.split('/');
+                                        carray2 = TollArrayTB[i].CAR_JEEP_VAN.split('/');
+                                        var carfrst = +carray2[0];
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">CAR/JEEP/VAN :' + '
+                                <span class="bgred">Rs ' + carray[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + carray[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        //   var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+                                    case "LCV":
+                                        var clcv = TollArrayTB[i].LCV.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">LCV : ' + '
+                                <span class="bgred">Rs ' + clcv[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + clcv[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        //  var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+
+                                    case "Bus_Truck":
+                                        var cbtruck = TollArrayTB[i].BUS_TRUCK.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">BUS/TRUCK : ' + '
+                                <span class="bgred">Rs ' + cbtruck[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + cbtruck[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        // var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+
+                                    case "Upto_3_Axle_Vehicle":
+                                        var cu3aw = TollArrayTB[i].UPTO_3_AXLE_VEHICLE.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">Upto 3 Axle Vehicle : ' + '
+                                <span class="bgred">Rs ' + cu3aw[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + cu3aw[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        //  var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+
+                                    case "Upto_4_to_6_Axle_Vehicle":
+                                        var c4t6a = TollArrayTB[i].UPTO_4_TO_6_AXLE.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">4 to 6 Axle : ' + '
+                                <span class="bgred">Rs ' + c4t6a[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + c4t6a[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        // var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+                                    case "HCM_EME":
+                                        var chcm = TollArrayTB[i].HCM_EME.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">HCM/EME : ' + '
+                                <span class="bgred">Rs ' + chcm[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + chcm[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        //  var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+                                        //case "HCM_EME":
+                                        //    var chcm = TollArrayTB[i].HCM_EME.split('/');
+                                        //    var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">HCM/EME : ' + '
+                                <span class="bgred">Rs ' + chcm[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        //    var icon_img = "Images/toll-road.png" + '
+                        <div>Rs. 90/-</div>';
+                                        //    var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        //    //  var car = +clcv[0];
+                                        //    gmarkers.push(marker);
+                                        //    break;
+
+                                    case "Upto_7_or_More_Axle":
+                                        var cu7a = TollArrayTB[i].UPTO_7_or_MORE_AXLE.split('/');
+                                        var Popuphtml = html = '
+                        <div class="iw-content">' + '
+                            <div class="iw-subTitle">' + TollArrayTB[i].TOLL_PLAZA_NAME + '-Toll Charges</div>' + '
+                            <p class="pinfo">7 or more Axle : ' + '
+                                <span class="bgred">Rs ' + cu7a[0] + '/-</span>' + '
+                            </p>' + '
+                        </div>';
+                                        var icon_img = '₹ ' + cu7a[0] + '/-';
+                                        var marker = createMarker(point, html, Popuphtml, icon_img);
+                                        // var car = +clcv[0];
+                                        gmarkers.push(marker);
+                                        break;
+                                }
+                            }
+
+                            calcRoute();
+                        }
+                        function createMarker(point, html, Popuphtml, icon_img) {
+
+
+
+                            var infowindow = new google.maps.InfoWindow();
+                            var marker;
+                            marker = new google.maps.Marker({
+                                position: point,
+                                //map: map,
+                                icon: {
+                                    url: 'Images/message.gif',
+                                    //size: new google.maps.Size(45, 45),
+                                    origin: new google.maps.Point(0, 0),
+                                    anchor: new google.maps.Point(15, 40),
+                                    scaledSize: new google.maps.Size(90, 35),
+                                    labelOrigin: new google.maps.Point(45, 12)
+                                },
+                                label: {
+                                    text: icon_img,
+                                    fontWeight: 'bold',
+                                    fontSize: '12px',
+                                    fontFamily: '"Arial", Courier,Monospace',
+                                    color: 'black'
+                                }
+                                //,optimized:false
+                            });
+                            google.maps.event.addDomListener(marker, "click", function () {
+                                infowindow.setContent(html);
+                                infowindow.open(map, marker);
+                                marker.setIcon(myIcon_google);
+                            });
+                            google.maps.event.addDomListener(marker, 'click', function () { markerClick(this, Popuphtml); });
+
+                            google.maps.event.addDomListener(marker, 'click', function () { infowindow.close(); });
+                            return marker;
+
+                        }
+                        function calcRoute() {
+
+                            // Clear any previous route boxes from the map
+                            clearBoxes();
+
+                            // Convert the distance to box around the route from miles to km
+                            distance = /* parseFloat(document.getElementById("distance").value) */.490 * 1.609344;
+
+                            //var start = document.getElementById('txtSourceRoute').value;
+                            //var end = document.getElementById('txtDestinationRoute').value;
+
+                            var start = s;
+                            var end = d;
+                            var tgpts = [];
+                            var request = {
+                                origin: start,
+                                destination: end,
+                                waypoints: tgpts,
+                                travelMode: google.maps.TravelMode.DRIVING,
+                                unitSystem: google.maps.DirectionsUnitSystem.METRIC
+                            };
+                            directionsService.route(request, function (response, status) {
+                                if (status == google.maps.DirectionsStatus.OK) {
+                                    directionsDisplay.setDirections(response);
+
+                                    var distance1 = response.routes[0].legs[0].distance.text;
+                                    document.getElementById("hddis").value = distance1;
+
+                                    // Box around the overview path of the first route
+                                    var path = response.routes[0].overview_path;
+                                    var boxes = routeBoxer.box(path, distance);
+                                    // alert(boxes.length);
+                                    drawBoxes(boxes);
+                                    // findPlaces(boxes,0);
+                                    // HideWait();
+                                    //   document.getElementById("BtnLoad").click();
+                                };
+                            });
+                        }
+                        // Draw the array of boxes as polylines on the map
+
+                        function drawBoxes(boxes) {
+                            boxpolys = new Array(boxes.length);
+                            for (var i = 0; i< boxes.length; i++) {
+                                boxpolys[i] = new google.maps.Rectangle({
+                                    bounds: boxes[i],
+                                    fillOpacity: 0,
+                                    strokeOpacity: 1.0,
+                                    strokeColor: '#000000',
+                                    strokeWeight: 0,
+                                    map: map
+                                });
+
+                                for (var j = 0; j < gmarkers.length; j++) {
+                                    if (boxes[i].contains(gmarkers[j].getPosition())) {
+                                        gmarkers[j].setMap(map);
+
+                                        document.getElementById("latlong").value += gmarkers[j].getPosition() + "|";
+                                        document.getElementById("ContentPlaceHolder1_TextBox1").value += gmarkers[j].getPosition() + "|";
+                                        document.getElementById('ContentPlaceHolder1_hdfs').value += gmarkers[j].getPosition() + "|";
+
+
+                                        // $('[id*=hdfd]').value + (latlong);
+                                        //document.getElementById("hdv").value += gmarkers[j] + "|";
+                                        //var a =+ gmarkers[j].getPosition() + "|";
+                                        //document.getElementById("lblltlong").value = gmarkers[j].getPosition() + "|";
+                                        //$('[id*=hdflatlong]').val(latlong);
+                                    }
+                                    // var ab = document.getElementById("latlong").innerHTML;
+
+
+                                    // ('[id*=hdfs]').value(ab);
+
+                                }
+                            }
+                        }
+
+
+                        //function findPlaces(boxes, searchIndex) {
+                        //    var request = {
+                        //        bounds: boxes[searchIndex],
+                        //        types: ["gas_station"]
+                        //    };
+                        //    // alert(request.bounds);
+                        //    service.radarSearch(request, function (results, status) {
+                        //        if (status != google.maps.places.PlacesServiceStatus.OK) {
+                        //            alert("Request[" + searchIndex + "] failed: " + status);
+                        //            return;
+                        //        }
+                        //        // alert(results.length);
+                        //        document.getElementById('side_bar').innerHTML += "bounds[" + searchIndex + "] returns " + results.length + " results
+                        <br>"
+                        //        for (var i = 0, result; result = results[i]; i++) {
+                        //            var marker = createMarker(result);
+                        //        }
+                        //        searchIndex++;
+                        //        if (searchIndex < boxes.length)
+                        //            findPlaces(boxes, searchIndex);
+                        //    });
+                        //}
+
+
+                        // Clear boxes currently on the map
+                        function clearBoxes() {
+                            if (boxpolys != null) {
+                                for (var i = 0; i < boxpolys.length; i++) {
+                                    boxpolys[i].setMap(null);
+                                }
+                            }
+                            boxpolys = null;
+                        }
+                        // $('[id*=hdflatlong]').html(latlong)
+                        // google.maps.event.addDomListener(window, 'load', initialize);
+
+                    }
+                    //});
+        
+                    </script>
+                    <script>
+            function BtnClick() {
+  
+                document.getElementById("ContentPlaceHolder1_hdfdm").value = mileage;
+                $('[id*=hdfdm]').val(mileage);
+
+          
+                var s = document.getElementById("txtsource").value;
+                var d = document.getElementById("txtdest").value;
+
+
+                var fuelt = document.getElementById('ContentPlaceHolder1_ddlfueltype').value;
+
+
+                if (s == "") {
+                    document.getElementById('ContentPlaceHolder1_lblwarning').innerHTML = "Plese Select Source City";
+                }
+                else if (d == "") {
+                    document.getElementById('ContentPlaceHolder1_lblwarning').innerHTML = "Plese Select Destination City";
+                }
+                else if (mlg == "") {
+                    document.getElementById('ContentPlaceHolder1_lblwarning').innerHTML = "Plese Select Mileage";
+                }
+                else if (fuelt == "0") {
+                    document.getElementById('ContentPlaceHolder1_lblwarning').innerHTML = "Plese Select Fuel Type as  Diesel Or Petrol";
+                }
+                else if (fuelt == "0" && mileage == "" && d == "" && s == "") {
+
+                    document.getElementById('ContentPlaceHolder1_lblwarning').innerHTML = "Plese Select Source,Destination City, Fuel Type as Diesel Or Petrol";
+                }
+
+}
+        </script>
+                    <h3 style="margin-top: 5px !important; margin-left: 10px; color: white; font-weight: normal; position: absolute; font-size: 12px; text-align: center; z-index: 99; margin-bottom: !important; width: 190px!important; background: #293b4a !important; padding: 0px 5px;">
+                        <b>TRIP COST CALCULATOR</b>
+                    </h3>
+                    <div class="row job-card_3" style="margin-top: 20px; padding-top: 15px !important;">
+                        <div class="col-md-5 col-xs-12">
+                            <div class="PageDesc">
+                                <div class="gap"></div>
+                                <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfcat" id="ContentPlaceHolder1_hdfcat" />
+                                <div class="input-group pd5">
+                                    <span id="ContentPlaceHolder1_Label1" class="fs18">Select Journey Type ? </span>
+                                    <span class="pd5">
+                                        <input id="ContentPlaceHolder1_rdbsingletrip" type="radio" name="ctl00$ContentPlaceHolder1$triptype" value="rdbsingletrip" />
+                                        <label for="ContentPlaceHolder1_rdbsingletrip">Single Trip</label>
+                                    </span>
+                                    <span class="pd5">
+                                        <input id="ContentPlaceHolder1_rdbreturntrip" type="radio" name="ctl00$ContentPlaceHolder1$triptype" value="rdbreturntrip" />
+                                        <label for="ContentPlaceHolder1_rdbreturntrip">Return Trip</label>
+                                    </span>
+                                </div>
+                                <div class="gap"></div>
+                                <div class="gap"></div>
+                                <span id="ContentPlaceHolder1_rfvsource" class="validator">Please Enter Source</span>
+                                <div class="input-group pd5">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <input name="ctl00$ContentPlaceHolder1$txtsource" type="text" id="txtsource" class="form-control" placeholder="Enter Source City" />
+                                </div>
+                                <div class="gap"></div>
+                                <span id="ContentPlaceHolder1_rfvdest" class="validator">Please Enter Destination</span>
+                                <div class="input-group pd5">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <input name="ctl00$ContentPlaceHolder1$txtdest" type="text" id="txtdest" class="form-control" placeholder="Enter Destination City" />
+                                </div>
+                                <div id="ContentPlaceHolder1_UpdatePanel2">
+                                    <div class="gap"></div>
+                                    <div class="input-group pd5">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-truck"></i>
+                                        </span>
+                                        <select name="ctl00$ContentPlaceHolder1$ddlbrand" id="ContentPlaceHolder1_ddlbrand" class="form-control">
+                                            <option value="0">--Select Brand--</option>
+                                            <option value="AMW">AMW</option>
+                                            <option value="ASHOKLEYLAND">ASHOKLEYLAND</option>
+                                            <option value="BHARATBENZ">BHARATBENZ</option>
+                                            <option value="EICHER">EICHER</option>
+                                            <option value="FORCE">FORCE</option>
+                                            <option value="MAHINDRA">MAHINDRA</option>
+                                            <option value="PIAGGIO">PIAGGIO</option>
+                                            <option selected="selected" value="TATA">TATA</option>
+                                        </select>
+                                    </div>
+                                    <div class="gap"></div>
+                                    <div class="input-group pd5">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-truck"></i>
+                                        </span>
+                                        <select name="ctl00$ContentPlaceHolder1$ddlmodel" id="ContentPlaceHolder1_ddlmodel" class="form-control" onchange="TollDropdown();">
+                                            <option value="0">--Select Model--</option>
+                                            <option value="207-RX-COMMON-RAIL [1.04Tons]">207-RX-COMMON-RAIL [1.04Tons]</option>
+                                            <option value="ACE-CNG [0.625Tons]">ACE-CNG [0.625Tons]</option>
+                                            <option value="ACE-GOLD [0.71Tons]">ACE-GOLD [0.71Tons]</option>
+                                            <option value="ACE-HT [0.6Tons]">ACE-HT [0.6Tons]</option>
+                                            <option value="ACE-MEGA [1.03Tons]">ACE-MEGA [1.03Tons]</option>
+                                            <option value="ACE-XL-BSIV [0.71Tons]">ACE-XL-BSIV [0.71Tons]</option>
+                                            <option value="ACE-ZIP [0.6Tons]">ACE-ZIP [0.6Tons]</option>
+                                            <option value="ACE-ZIP-XL [0.6Tons]">ACE-ZIP-XL [0.6Tons]</option>
+                                            <option value="LPS-4018 [34.23Tons]">LPS-4018 [34.23Tons]</option>
+                                            <option value="LPS-4018 [34.23Tons]">LPS-4018 [34.23Tons]</option>
+                                            <option selected="selected" value="LPS-4923 [40.42Tons]">LPS-4923 [40.42Tons]</option>
+                                            <option value="LPT-1109-EX [8Tons]">LPT-1109-EX [8Tons]</option>
+                                            <option value="LPT-1109-HEX2 [8.32Tons]">LPT-1109-HEX2 [8.32Tons]</option>
+                                            <option value="LPT-2518 [19Tons]">LPT-2518 [19Tons]</option>
+                                            <option value="LPT-2521 [18.84Tons]">LPT-2521 [18.84Tons]</option>
+                                            <option value="LPT-3118 [23.15Tons]">LPT-3118 [23.15Tons]</option>
+                                            <option value="LPT-3718 [27.4Tons]">LPT-3718 [27.4Tons]</option>
+                                            <option value="LPT-3723 [27Tons]">LPT-3723 [27Tons]</option>
+                                            <option value="LPT-407 [4.75Tons]">LPT-407 [4.75Tons]</option>
+                                            <option value="LPT-709 [4.69Tons]">LPT-709 [4.69Tons]</option>
+                                            <option value="LPT-810 [4.99Tons]">LPT-810 [4.99Tons]</option>
+                                            <option value="PRIMA-4028 [32.92Tons]">PRIMA-4028 [32.92Tons]</option>
+                                            <option value="PRIMA-4928 [39.28Tons]">PRIMA-4928 [39.28Tons]</option>
+                                            <option value="SE-1613 [11.48Tons]">SE-1613 [11.48Tons]</option>
+                                            <option value="SFC-407 [3.87Tons]">SFC-407 [3.87Tons]</option>
+                                            <option value="SFC-407-HT [3.97Tons]">SFC-407-HT [3.97Tons]</option>
+                                            <option value="SFC-407-PICK-UP [2.25Tons]">SFC-407-PICK-UP [2.25Tons]</option>
+                                            <option value="SFC-407-PICKUP-EX-BS-IV [2.45Tons]">SFC-407-PICKUP-EX-BS-IV [2.45Tons]</option>
+                                            <option value="SFC-709 [4.77Tons]">SFC-709 [4.77Tons]</option>
+                                            <option value="SFC-909 [6.29Tons]">SFC-909 [6.29Tons]</option>
+                                            <option value="SIGNA-3118.T [23.3Tons]">SIGNA-3118.T [23.3Tons]</option>
+                                            <option value="SIGNA-3518 [29.23Tons]">SIGNA-3518 [29.23Tons]</option>
+                                            <option value="SIGNA-4018 [34.23Tons]">SIGNA-4018 [34.23Tons]</option>
+                                            <option value="SIGNA-4923.S [40.72Tons]">SIGNA-4923.S [40.72Tons]</option>
+                                            <option value="SUPER-ACE-MINT [1Tons]">SUPER-ACE-MINT [1Tons]</option>
+                                            <option value="ULTRA-1012 [6.5Tons]">ULTRA-1012 [6.5Tons]</option>
+                                            <option value="ULTRA-1014 [7Tons]">ULTRA-1014 [7Tons]</option>
+                                            <option value="ULTRA-912 [6Tons]">ULTRA-912 [6Tons]</option>
+                                            <option value="XENON [1.03Tons]">XENON [1.03Tons]</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="gap"></div>
+                                <div class="input-group pd5">
+                                    <span class="input-group-addon font11">
+                                        <i class="fas fa-gas-pump"></i>
+                                    </span>
+                                    <select name="ctl00$ContentPlaceHolder1$ddlfueltype" id="ContentPlaceHolder1_ddlfueltype" class="form-control capital">
+                                        <option value="0">--Select Fuel Type--</option>
+                                        <option selected="selected" value="Diesel">Diesel</option>
+                                        <option value="Petrol">Petrol</option>
+                                    </select>
+                                </div>
+                                <div class="gap"></div>
+                                <div class="input-group pd5">
+                                    <span id="ContentPlaceHolder1_Label2" class="fs18">Is your truck on EMI ? </span>
+                                    <span class="pd5">
+                                        <input id="ContentPlaceHolder1_rdbwithemi" type="radio" name="ctl00$ContentPlaceHolder1$emi" value="rdbwithemi" />
+                                        <label for="ContentPlaceHolder1_rdbwithemi"> Yes</label>
+                                    </span>
+                                    <span class="pd5">
+                                        <input id="ContentPlaceHolder1_rdbwithoutemi" type="radio" name="ctl00$ContentPlaceHolder1$emi" value="rdbwithoutemi" />
+                                        <label for="ContentPlaceHolder1_rdbwithoutemi"> No</label>
+                                    </span>
+                                </div>
+                                <div class="gap"></div>
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$btns" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btns&quot;, &quot;&quot;, true, &quot;vgTripCost&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_btns" Class="btn btn-primary w50" />
+                                <div class="gap"></div>
+                                <p id="ContentPlaceHolder1_divresult">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>
+                                                <h3 style="border: 2px solid #88a2a0;margin: 0;background: #ffefb4;text-align: center;">Approx. Total Freight
+                                                    <br />
+                                                    <small style="font-size:22px;">
+                                                        <span id="ContentPlaceHolder1_lblfreight">₹ 12,080</span>
+                                                    </small>
+                                                </h3>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>
+                                                <h3 style="border: 2px solid #c7b263;margin: 0;background: #f9fffe;text-align: center;">Approx Trip Cost
+                                                    <br />
+                                                    <small style="font-size:22px;">
+                                                        <span id="ContentPlaceHolder1_lblTotalTripPrice">₹ 8,203</span>
+                                                    </small>
+                                                </h3>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <h3 style="border: 2px solid #8BC34A;margin: 0;background: #ebffd3;text-align: center;">Approx Profit
+                                                    <br />
+                                                    <small style="font-size:22px;">
+                                                        <span id="ContentPlaceHolder1_lblprofit">
+                                                            <font color="Green">₹ 3,877</font>
+                                                        </span>
+                                                    </small>
+                                                </h3>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-12">
+               
+                               </div>
+                                    </div>
+                                </p>
+                                <div class="gap"></div>
+                                <span id="ContentPlaceHolder1_lblwarning" class="lblred"></span>
+                            </div>
+                        </div>
+                        <div id="ContentPlaceHolder1_UpdatePanel1">
+                            <div class="col-md-5 col-xs-12 pull-right" style="margin-top:22px;" >
+                                <div class="PageDesc">
+                                    <div class="row" >
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Source</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <span id="ContentPlaceHolder1_lblsource">Delhi, India</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Destination</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <span id="ContentPlaceHolder1_lbldest">Dhanbad, Jharkhand, India</span>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Vehicle Type</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <span id="ContentPlaceHolder1_lblvhtype">TATA ( LPS-4923  )</span>
+                                            <span id="ContentPlaceHolder1_lblton" class="toncss">40.42Tons]</span>
+                                            <span id="ContentPlaceHolder1_lbltonpassing" class="lbltonbold"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Journey Type</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <span id="ContentPlaceHolder1_lbljrnType">Single Trip</span>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder" style="padding-top: 70px;">
+                                            <b>Truck Image</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" >
+                                            <div id="ContentPlaceHolder1_UpdatePanel3">
+                                                <img id="ContentPlaceHolder1_imgTruck" class="img-responsive" src="AllTrucks/TATA_LPS-4923.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Distance</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <div id="ContentPlaceHolder1_UpdatePanel4">
+                                                <span id="ContentPlaceHolder1_lbldist">1,227 km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder" style="height: 86px;">
+                                            <b>Duration</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff7b3;float:left">
+                                            <div class="row" ">
+                                                <div class="col-md-12 col-xs-12">Travelling Duration : 
+                                                    <span id="ContentPlaceHolder1_lblduration">4.1 Days</span>
+                                                </div>
+                                                <div class="col-md-12 col-xs-12">Loading & Unloading Time : 
+                                                    <span id="ContentPlaceHolder1_lbloading"></span>
+                                                </div>
+                                                <div class="col-md-12 col-xs-12">Total Duration : 
+                                                    <span id="ContentPlaceHolder1_lbltotalduration">5.1 Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ">
+                                        <div class="col-md-6 col-xs-5 colborder">
+                                            <b>Fuel Consumed</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-7 colborder" style="background:#fff9e1">
+                                            <span id="ContentPlaceHolder1_lblfuelconsumed">77 Ltrs</span>
+                                        </div>
+                                    </div>
+                                    <div class="row"">
+                                        <div class="col-md-6 col-xs-12 colborder">
+                                            <b style="font-size: 17.5px;">Toll Charges</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 colborder" style="background: #fcc600;color: #293b4a;text-align: center;font-size: 18px;border-left: none;border-top: none;font-weight: bold;">
+                                            <span id="ContentPlaceHolder1_lbltollprice">₹ 2,400</span>/-
+                                        </div>
+                                    </div>
+                                    <div class="row"">
+                                        <div class="col-md-6 col-xs-12 colborder">
+                                            <b style="font-size: 17.5px;">Approx. Fuel Cost</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 colborder" style="background: #99f3ff;color: #293b4a;text-align: center;font-size: 18px;border-left: none;border-top: none;font-weight: bold;">
+                                            <span id="ContentPlaceHolder1_lblFuelPrice">₹ 5,803</span>/-
+                                        </div>
+                                    </div>
+                                    <div class="row"">
+                                        <div class="col-md-6 col-xs-12 colborder">
+                                            <b style="font-size: 17.5px;">Approx Trip Cost</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 colborder" style="margin: 0;background: #f9fffe;text-align: center;font-size: 18px;border-left: none;border-top: none;font-weight: bold;">
+                                            <span id="ContentPlaceHolder1_lbltc2">₹ 8,203</span>/-
+                                        </div>
+                                    </div>
+                                    <div class="row"">
+                                        <div class="col-md-6 col-xs-12 colborder">
+                                            <b style="font-size: 17.5px;">Approx. Total Freight</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 colborder" style="margin: 0;background: #ffefb4;text-align: center;font-size: 18px;border-left: none;border-top: none;font-weight: bold;">
+                                            <span id="ContentPlaceHolder1_lbltf2">₹ 12,080</span>/-
+                                        </div>
+                                    </div>
+                                    <div class="row"">
+                                        <div class="col-md-6 col-xs-12 colborder">
+                                            <b style="font-size: 17.5px;">Approx Profit</b>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 colborder" style="margin: 0;background: #ebffd3;text-align: center;font-size: 18px;border-left: none;border-top: none;font-weight: bold;s">
+                                            <span id="ContentPlaceHolder1_lblap2">
+                                                <font color="Green">₹ 3,877</font>
+                                            </span>/-
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfs" id="ContentPlaceHolder1_hdfs" />
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfd" id="ContentPlaceHolder1_hdfd" />
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfdm" id="ContentPlaceHolder1_hdfdm" />
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdfdist" id="ContentPlaceHolder1_hdfdist" />
+                    <input type="hidden" name="ctl00$ContentPlaceHolder1$hdflatlong" id="ContentPlaceHolder1_hdflatlong" />
+                    <input name="ctl00$ContentPlaceHolder1$TextBox1" type="text" id="ContentPlaceHolder1_TextBox1" class="dn" />
+                    <input name="ctl00$ContentPlaceHolder1$txtdist" type="text" id="ContentPlaceHolder1_txtdist" class="dn" />
+                    <div class="row job-card">
+                        <div id="ContentPlaceHolder1_pnlMapPrice">
+                            <div class="col-md-8 col-xs-12">
+                                <div id="dvMap" style="width: 100%; height: 600px;"></div>
+                                <div id="Div2" class="dn" style="width: 0%; height: 0px;"></div>
+                            </div>
+                            <div class="col-md-4 col-xs-12" style="height: 610px; overflow-y: scroll; overflow-x: hidden;">
+                                <div class="row" style="background: whitesmoke;">
+                                    <div class="col-md-7 col-xs-5">
+                                        <h4 style="margin: 0; color: #333; font-weight: bold; margin: 5px;">Toll Name</h4>
+                                    </div>
+                                    <div class="col-md-5 col-xs-7">
+                                        <h4 style="margin: 0; color: #333; font-weight: bold; margin: 5px;">Toll Charge</h4>
+                                    </div>
+                                </div>
+                                <hr style="margin: 0;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="Div1" style="position: relative">
+                                <label id="lblltlong"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-main">
+                    <div class="container">
+                        <div class="gap">
+                    </div>
+                        <div class="row hidden-xs hidden-sm">
+                            <div class="col-md-3">
+                                <h3>About Us</h3>
+                                <ul class="nav">
+                                    <li>
+                                        <a href="/Contact">
+                                            <span class="fa fa-caret-right fa-fw"></span>Contact Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="fa fa-caret-right fa-fw"></span>Advertise Online
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/About">
+                                            <span class="fa fa-caret-right fa-fw"></span>About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="fa fa-caret-right fa-fw"></span>Our Partners
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>More Services</h3>
+                                <ul class="nav">
+                                    <li>
+                                        <a href="/FAQ">
+                                            <span class="fa fa-caret-right fa-fw"></span>How It Works ?
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/Terms">
+                                            <span class="fa fa-caret-right fa-fw"></span>Terms & Condition
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/Privacy">
+                                            <span class="fa fa-caret-right fa-fw"></span>Privacy Policy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>User Area</h3>
+                                <ul class="nav">
+                                    <li>
+                                        <a href="/Register">
+                                            <span class="fa fa-caret-right fa-fw"></span>Create Account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/PostTruck">
+                                            <span class="fa fa-caret-right fa-fw"></span>Post Truck Location
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/PostLoad">
+                                            <span class="fa fa-caret-right fa-fw"></span>Post Load
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/FindTruck">
+                                            <span class="fa fa-caret-right fa-fw"></span>Find Truck
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/FindLoad">
+                                            <span class="fa fa-caret-right fa-fw"></span>Find Load
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Contact Us</h3>
+                                <h5>Toll Free : 1800 22 2829</h5>
+                                <br />
+                                <span class="fa fa-twitter fa-fw socialicon"></span>
+                                <a href="https://www.facebook.com/pages/Truckbhada/207098576156028">
+                                    <span class="fa fa-facebook fa-fw socialicon"></span>
+                                </a>
+                                <span class="fa fa-linkedin fa-fw socialicon"></span>
+                                <div class="fb-like" data-href="https://www.facebook.com/pages/Truckbhada/207098576156028" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                                <div id="fb-root"></div>
+                                <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="border-top: 1px solid #292929; margin-top: 5px; padding-top: 5px;">
+                                2019
+                            &copy Truckbhada.com | All Right Reserved.
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BEGIN JIVOSITE CODE {literal} -->
+            <!-- BEGIN JIVOSITE CODE {literal} -->
+            <!-- BEGIN JIVOSITE CODE {literal} -->
+            <script type='text/javascript'>
+            (function () {
+                var widget_id = 'HANxCcHf8j'; var d = document; var w = window; function l() {
+                    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/' + widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);
+                } if (d.readyState == 'complete') { l(); } else { if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } }
+            })();</script>
+            <!-- {/literal} END JIVOSITE CODE -->
+            <!-- {/literal} END JIVOSITE CODE -->
+            <!-- {/literal} END JIVOSITE CODE -->
+            <script type="text/javascript">
+//
+                <![CDATA[
+$(document).ready(function () { $('[id*=btnSubmit]').click(); });(function() {var fn = function() {$get("ScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+
+            </script>
+        </form>
+    </body>
+</html>
